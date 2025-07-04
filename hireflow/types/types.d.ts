@@ -15,4 +15,16 @@ export interface ResumeData {
     summary: string;
     workExperience: workExperience[];
     skills: string[];
+
+      // Optional (for cover letter)
+    coverLetterData?: coverLetterData[]
   }
+
+export interface coverLetterData {
+    address?: string;
+    recipientName?: string;
+    recipientRole?: string;
+    targetCompany?: string;
+    targetJobTitle?: string;
+    coverLetterContent?: string;
+}
