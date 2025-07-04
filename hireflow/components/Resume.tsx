@@ -274,13 +274,13 @@ return (
         <h2 className="text-xl font-semibold text-gray-700">Work Experience</h2>
         {resume.workExperience.map((we, i) => (
           <div key={i} className="border border-gray-200 p-4 rounded-md space-y-3 bg-gray-50">
-            <input placeholder="Position" value={we.position || ''} onChange={e => updateWorkExperience(i, 'position', e.target.value)} className="input" />
-            <input placeholder="Company" value={we.company || ''} onChange={e => updateWorkExperience(i, 'company', e.target.value)} className="input" />
+            <input placeholder="Position" value={we.position || ''} onChange={e => updateWorkExperience(i, 'position', e.target.value)} className="input text-black bg-white" />
+            <input placeholder="Company" value={we.company || ''} onChange={e => updateWorkExperience(i, 'company', e.target.value)} className="input text-black bg-white" />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input type="month" placeholder="Start Date" value={we.startDate || ''} onChange={e => updateWorkExperience(i, 'startDate', e.target.value)} className="input" />
-              <input type="month" placeholder="End Date" value={we.endDate || ''} onChange={e => updateWorkExperience(i, 'endDate', e.target.value)} className="input" />
+              <input type="month" placeholder="Start Date" value={we.startDate || ''} onChange={e => updateWorkExperience(i, 'startDate', e.target.value)} className="input text-black bg-white" />
+              <input type="month" placeholder="End Date" value={we.endDate || ''} onChange={e => updateWorkExperience(i, 'endDate', e.target.value)} className="input text-black bg-white" />
             </div>
-            <textarea placeholder="Description" value={we.description || ''} onChange={e => updateWorkExperience(i, 'description', e.target.value)} className="input textarea" />
+            <textarea placeholder="Description" value={we.description || ''} onChange={e => updateWorkExperience(i, 'description', e.target.value)} className="input textarea text-black bg-white" />
           </div>
         ))}
         <button type="button" onClick={addWorkExperience} className="btn-primary w-fit">+ Add Experience</button>
@@ -291,11 +291,11 @@ return (
         <h2 className="text-xl font-semibold text-gray-700">Cover Letter</h2>
         {resume.coverLetterData?.map((cl, i) => (
           <div key={i} className="border border-gray-200 p-4 rounded-md space-y-3 bg-gray-50">
-            <input placeholder="Address" value={cl.address || ''} onChange={e => updateCoverLetterData(i, 'address', e.target.value)} className="input" />
-            <input placeholder="Recipient Name" value={cl.recipientName || ''} onChange={e => updateCoverLetterData(i, 'recipientName', e.target.value)} className="input" />
-            <input placeholder="Recipient Role" value={cl.recipientRole || ''} onChange={e => updateCoverLetterData(i, 'recipientRole', e.target.value)} className="input" />
-            <input placeholder="Target Company" value={cl.targetCompany || ''} onChange={e => updateCoverLetterData(i, 'targetCompany', e.target.value)} className="input" />
-            <input placeholder="Target Job Title" value={cl.targetJobTitle || ''} onChange={e => updateCoverLetterData(i, 'targetJobTitle', e.target.value)} className="input" />
+            <input placeholder="Address" value={cl.address || ''} onChange={e => updateCoverLetterData(i, 'address', e.target.value)} className="input text-black bg-white" />
+            <input placeholder="Recipient Name" value={cl.recipientName || ''} onChange={e => updateCoverLetterData(i, 'recipientName', e.target.value)} className="input text-black bg-white" />
+            <input placeholder="Recipient Role" value={cl.recipientRole || ''} onChange={e => updateCoverLetterData(i, 'recipientRole', e.target.value)} className="input text-black bg-white" />
+            <input placeholder="Target Company" value={cl.targetCompany || ''} onChange={e => updateCoverLetterData(i, 'targetCompany', e.target.value)} className="input text-black bg-white" />
+            <input placeholder="Target Job Title" value={cl.targetJobTitle || ''} onChange={e => updateCoverLetterData(i, 'targetJobTitle', e.target.value)} className="input text-black bg-white" />
           </div>
         ))}
         <button type="button" onClick={addCoverLetter} className="btn-primary w-fit">+ Add Cover Letter</button>
