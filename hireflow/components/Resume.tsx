@@ -304,7 +304,7 @@ return (
       {/* Skills */}
       <div className="bg-white p-6 rounded-xl shadow space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Skills</h2>
-        <input type="text" placeholder="e.g. JavaScript, React, LLMs" onChange={updateSkills} className="input" />
+        <input type="text" placeholder="e.g. JavaScript, React, LLMs" onChange={updateSkills} className="input text-black bg-white" />
       </div>
 
       {/* Generate Button */}
