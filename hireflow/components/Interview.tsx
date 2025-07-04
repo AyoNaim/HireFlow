@@ -277,7 +277,7 @@ return (
           placeholder="Job Title"
           value={form.jobTitle || ''}
           onChange={handleChange}
-          className="input"
+          className="input text-black bg-white"
         />
         <input
           type="text"
@@ -285,7 +285,7 @@ return (
           placeholder="Level"
           value={form.level || ''}
           onChange={handleChange}
-          className="input"
+          className="input text-black bg-white"
         />
         <input
           type="text"
@@ -293,7 +293,7 @@ return (
           placeholder="Company"
           value={form.company || ''}
           onChange={handleChange}
-          className="input"
+          className="input text-black bg-white"
         />
         <select
           multiple

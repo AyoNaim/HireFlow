@@ -261,11 +261,11 @@ return (
       <div className="bg-white p-6 rounded-xl shadow space-y-4">
         <h2 className="text-xl font-semibold text-gray-700">Personal Information</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input type="text" value={resume.fullName || ''} onChange={e => handleChange('fullName', e.target.value)} placeholder="Full Name" className="input" required />
-          <input type="email" value={resume.email || ''} onChange={e => handleChange('email', e.target.value)} placeholder="Email" className="input" required />
-          <input type="tel" value={resume.phone || ''} onChange={e => handleChange('phone', e.target.value)} placeholder="Phone" className="input" />
-          <input type="url" value={resume.linkedin || ''} onChange={e => handleChange('linkedin', e.target.value)} placeholder="LinkedIn" className="input" />
-          <input type="url" value={resume.github || ''} onChange={e => handleChange('github', e.target.value)} placeholder="GitHub" className="input" />
+          <input type="text" value={resume.fullName || ''} onChange={e => handleChange('fullName', e.target.value)} placeholder="Full Name" className="input text-black bg-white" required />
+          <input type="email" value={resume.email || ''} onChange={e => handleChange('email', e.target.value)} placeholder="Email" className="input text-black bg-white" required />
+          <input type="tel" value={resume.phone || ''} onChange={e => handleChange('phone', e.target.value)} placeholder="Phone" className="input text-black bg-white" />
+          <input type="url" value={resume.linkedin || ''} onChange={e => handleChange('linkedin', e.target.value)} placeholder="LinkedIn" className="input text-black bg-white" />
+          <input type="url" value={resume.github || ''} onChange={e => handleChange('github', e.target.value)} placeholder="GitHub" className="input text-black bg-white" />
         </div>
       </div>
 
