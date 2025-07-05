@@ -212,7 +212,7 @@ const updateCoverLetterData = (
       - today's date: ${new Date().toLocaleDateString()}
 
       Use a natural tone. Insert the name, company, and job title where appropriate.
-      Omit header/footer and closing like "Sincerely".
+      DO NOT OMIT the footer and closing like "Sincerely" adn also make suef to add the address oat the footer.
       Also, make sure to omit unnecessary informations like where the candidate saw the posting, make it a cover letter that can be sent to the recipient without any further editing.
   `;
       setcoverLoading(true);

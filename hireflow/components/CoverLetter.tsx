@@ -10,7 +10,16 @@ const CoverLetter = React.forwardRef<HTMLDivElement, coverLetterProps>(({ data }
  return (
       <div
         ref={ref}
-        className="bg-white text-gray-900 font-serif w-[210mm] print:h-[180mm] mx-auto p-10 leading-relaxed text-[16px]"
+        className="
+          bg-white text-gray-900 font-inter /* Changed font to Inter for consistency */
+          w-full h-auto mx-auto
+          p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 /* Responsive padding */
+          leading-relaxed text-base /* Responsive font size */
+          shadow-lg rounded-lg overflow-hidden /* Modern card-like appearance */
+          my-8 /* Vertical spacing */
+          max-w-4xl /* Max width for larger screens */
+          print:w-[210mm] print:h-auto print:p-[20mm] print:shadow-none print:rounded-none
+      "
       >
         <header className="mb-6">
           {/* <p className="text-sm">{fullName}</p>
