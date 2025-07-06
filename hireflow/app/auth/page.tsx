@@ -29,8 +29,7 @@ const Auth = () => {
     } else {
       clearUser();
     }
-  }, [userData, setUser, clear
-    er]);
+  }, [userData, setUser, clearUser]);
 
   const handleRegister = async () => {
   if (!email || !password) {
@@ -53,9 +52,12 @@ const Auth = () => {
     const { data: freshUser } = await refetch();
     if (freshUser) setUser(freshUser);
 
-    router.push('/verify-email');
+    setTimeout(() => {
+      router.push('/verify-email');
+    }, 4000);
+
     setUnverifiedEmail(email);
-    setMessage(`Verification email sent to ${email}. Please check your inbox.`);
+    setMessage(`Verification email sent to ${email}. Please check your inbox. You would be redirected the email verification page.`);
     setErrorMsg('');
   } catch (error) {
     if (error instanceof AppwriteException) {
