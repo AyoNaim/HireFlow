@@ -1,15 +1,23 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { AppwriteException } from 'appwrite';
 import { account } from '../lib/appwrite';
+import { useUser } from '../lib/stores/hooks/useUser';
 
-const VerifyEmail = () => {
+const VerifyEmailContent = () => {
+    const { data: userData } = useUser();
     const searchParams = useSearchParams();
     const router = useRouter();
     const [message, setMessage] = useState('');
     const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
+
+    useEffect(() => {
+      if (userData?.emailVerification) {
+        router.push('/dashboard')
+      }
+    }, [router, userData]);
 
     useEffect(() => {
         const secret = searchParams.get('secret');
@@ -52,4 +60,10 @@ const VerifyEmail = () => {
     </div>
   );
 }
-export default VerifyEmail
+export default function VerifyEmail() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex justify-center items-center">Loading...</div>}>
+      <VerifyEmailContent />
+    </Suspense>
+  )
+}

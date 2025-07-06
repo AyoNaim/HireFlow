@@ -48,7 +48,7 @@ const Interview = () => {
     if (userData && !userData.emailVerification) {
       router.push('/verify-email');
     }
-  }, [userData]);
+  }, [userData, router]);
 
 // submit transcript results
 

@@ -84,7 +84,7 @@ const Resume = () => {
     if (user && !user.emailVerification) {
       router.push('/verify-email');
     }
-  }, [user]);
+  }, [user, router]);
 
   useEffect(() => {
     if (summary && contentRef.current) {
