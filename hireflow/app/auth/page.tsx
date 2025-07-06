@@ -29,7 +29,8 @@ const Auth = () => {
     } else {
       clearUser();
     }
-  }, [userData, setUser, clearUser]);
+  }, [userData, setUser, clear
+    er]);
 
   const handleRegister = async () => {
   if (!email || !password) {

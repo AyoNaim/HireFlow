@@ -11,13 +11,14 @@ const DashboardPage = () => {
   const { data: userData } = useUser();
   const { data: resumes, isLoading } = useUserResumes(userData?.$id);
 
-  if (isLoading) return <p>Loading your resumes...</p>;
-
   useEffect(() => {
     if (userData && !userData.emailVerification) {
       router.push('/verify-email');
     }
-  }, [userData]);
+  }, [userData, router]);
+
+  if (isLoading) return <p>Loading your resumes...</p>;
+
 
   // Helper: Ensure workExperience and coverLetterData are arrays
   const parseArray = (field: string) => {
