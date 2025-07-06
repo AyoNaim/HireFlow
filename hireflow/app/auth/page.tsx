@@ -1,7 +1,7 @@
 'use client';
 import { ID, AppwriteException } from 'appwrite';
 import { useEffect, useState } from 'react';
-import { useUser } fro.vscodem '../lib/stores/hooks/useUser';
+import { useUser } from '../lib/stores/hooks/useUser';
 import { useAuthStore } from '../lib/stores/useAuthStore';
 import { useQueryClient } from '@tanstack/react-query';
 import { account } from '../lib/appwrite';
@@ -38,7 +38,7 @@ const Auth = () => {
   }
 
   try {
-    // Step 1: Create the account
+    // Step 1: Create the account.....
     await account.create(ID.unique(), email, password);
 
     // Step 2: Immediately log the user in
