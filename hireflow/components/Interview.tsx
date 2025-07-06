@@ -1,7 +1,9 @@
 'use client'
 import { generateFeedback, generateQuestions } from '@/app/lib/action';
+import { useUser } from '@/app/lib/stores/hooks/useUser';
 import Link from 'next/link';
-import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { useState, useEffect } from 'react';
 
 type qAList = {
   id: string;
@@ -38,7 +40,15 @@ const Interview = () => {
     company: '',
     interview: [],
   });
+  const router = useRouter()
 
+  const { data: userData } = useUser();
+
+  useEffect(() => {
+    if (userData && !userData.emailVerification) {
+      router.push('/verify-email');
+    }
+  }, [userData]);
 
 // submit transcript results
 

@@ -6,6 +6,7 @@ import ModernResume from './MordernResume';
 import { useReactToPrint } from 'react-to-print';
 import CoverLetter from './CoverLetter';
 import { useUser } from '@/app/lib/stores/hooks/useUser';
+import { useRouter } from 'next/navigation';
 
 const Resume = () => {
   const [resume, setResume] = useState<ResumeData>({
@@ -38,7 +39,8 @@ const Resume = () => {
   const coverLetterRef = useRef<HTMLDivElement>(null);
   const [coverLoading, setcoverLoading] = useState(false);
   const [canDownload, setcanDownload] = useState(false);
-  const [coverLetterDownload, setcoverLetterDownload] = useState(false)
+  const [coverLetterDownload, setcoverLetterDownload] = useState(false);
+  const router = useRouter();
 
   const { data: user } = useUser();
   const userId = user?.$id
@@ -77,6 +79,12 @@ const Resume = () => {
     if(!coverLetterRef.current) return;
     requestAnimationFrame(() => handleCoverDownload());
   };
+
+  useEffect(() => {
+    if (user && !user.emailVerification) {
+      router.push('/verify-email');
+    }
+  }, [user]);
 
   useEffect(() => {
     if (summary && contentRef.current) {

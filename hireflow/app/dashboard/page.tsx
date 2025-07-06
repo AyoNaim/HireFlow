@@ -3,12 +3,21 @@
 import { workExperience } from '@/types/types';
 import { useUser } from '../lib/stores/hooks/useUser';
 import { useUserResumes } from '../lib/stores/hooks/useUserResumes';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const DashboardPage = () => {
+  const router = useRouter();
   const { data: userData } = useUser();
   const { data: resumes, isLoading } = useUserResumes(userData?.$id);
 
   if (isLoading) return <p>Loading your resumes...</p>;
+
+  useEffect(() => {
+    if (userData && !userData.emailVerification) {
+      router.push('/verify-email');
+    }
+  }, [userData]);
 
   // Helper: Ensure workExperience and coverLetterData are arrays
   const parseArray = (field: string) => {
