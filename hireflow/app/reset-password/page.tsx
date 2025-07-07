@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 
-export default function resetPassword() {
+export default function ResetPassword() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [message, setMessage] = useState('');
