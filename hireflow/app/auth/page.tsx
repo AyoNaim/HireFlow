@@ -23,13 +23,13 @@ const Auth = () => {
   const setUser = useAuthStore((state) => state.setUser);
   const clearUser = useAuthStore((state) => state.clearUser);
 
-  useEffect(() => {
-    if (userData) {
-      setUser(userData);
-    } else {
-      clearUser();
-    }
-  }, [userData, setUser, clearUser]);
+  // useEffect(() => {
+  //   if (userData) {
+  //     setUser(userData);
+  //   } else {
+  //     clearUser();
+  //   }
+  // }, [userData, setUser, clearUser]);
 
   const handleRegister = async () => {
   if (!email || !password) {
@@ -145,7 +145,11 @@ const Auth = () => {
                 }}
               />
             </div>
-
+            {/* forgot password */}
+            <div className="text-right text-sm text-blue-600 hover:underline cursor-pointer">
+              <Link href="/forgot-password">Forgot Password?</Link>
+            </div>
+            {/* forgot password */}
             <div className="flex flex-col sm:flex-row sm:justify-between gap-4 pt-4">
               <button
                 onClick={handleRegister}
