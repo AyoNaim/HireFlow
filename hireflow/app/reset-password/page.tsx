@@ -3,10 +3,10 @@
 import { AppwriteException } from "appwrite";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { account } from "../lib/appwrite";
 
-export default function ResetPassword() {
+function ResetPasswordContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [message, setMessage] = useState('');
@@ -81,4 +81,12 @@ export default function ResetPassword() {
       </div>
     </div>
   );
+}
+
+export default function ResetPassword() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex justify-center items-center">Loading...</div>}>
+      <ResetPasswordContent />
+    </Suspense>
+  )
 }
