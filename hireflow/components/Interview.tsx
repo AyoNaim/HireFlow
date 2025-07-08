@@ -309,7 +309,7 @@ return (
           multiple
           value={form.interview || []}
           onChange={handleSelect}
-          className="input h-32"
+          className="input h-32 bg-white text-black"
         >
           <option value="technical">Technical</option>
           <option value="behavioral">Behavioral</option>

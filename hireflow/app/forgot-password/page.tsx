@@ -41,7 +41,7 @@ export default function ForgotPassword() {
             <input
             type="email"
             placeholder="Enter your email"
-            className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+            className="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 bg-white text-black"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             />
