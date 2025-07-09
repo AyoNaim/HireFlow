@@ -18,7 +18,8 @@ const CoverLetter = React.forwardRef<HTMLDivElement, coverLetterProps>(({ data }
           shadow-lg rounded-lg overflow-hidden /* Modern card-like appearance */
           my-8 /* Vertical spacing */
           max-w-4xl /* Max width for larger screens */
-          print:w-[210mm] print:h-auto print:p-[20mm] print:shadow-none print:rounded-none
+          print:w-[210mm] print:p-[20mm] print:shadow-none print:rounded-none
+          print:h-[297mm] print:box-border
       "
       >
         <header className="mb-6">

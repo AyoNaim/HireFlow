@@ -27,7 +27,8 @@ const ModernResume = React.forwardRef<HTMLDivElement, ModernResumeProps>(
           shadow-lg rounded-lg overflow-hidden
           p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 /* Responsive padding */
           max-w-4xl mx-auto my-8 /* Center and constrain on larger screens */
-          print:w-[210mm] print:h-auto print:p-[20mm] print:shadow-none print:rounded-none
+          print:w-[210mm] print:p-[20mm] print:shadow-none print:rounded-none
+          print:h-[297mm] print:box-border
         "
       >
         {/* Header - Name and Contact Info */}

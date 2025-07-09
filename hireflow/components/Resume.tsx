@@ -245,7 +245,7 @@ const updateCoverLetterData = (
 return (
   <div className="bg-gray-50 min-h-screen p-4">
     {/* 💡 CTA Banner to Interview Tool */}
-    <div className="max-w-4xl mx-auto mb-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-md shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="print:hidden max-w-4xl mx-auto mb-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-4 rounded-md shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4">
       <div className="flex items-center space-x-3">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 8v4m0 4h.01M21 12c0 4.97-4.03 9-9 9S3 16.97 3 12 7.03 3 12 3s9 4.03 9 9z" />
