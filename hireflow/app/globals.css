@@ -34,3 +34,17 @@ body {
 .btn-secondary {
   @apply bg-green-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-green-700 disabled:opacity-50;
 }
+
+/* @media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+} */

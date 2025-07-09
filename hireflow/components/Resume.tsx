@@ -262,7 +262,7 @@ return (
       </a>
     </div>
 
-    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-8">
+    <form onSubmit={handleSubmit} className="max-w-4xl mx-auto space-y-8 print:hidden">
       <h1 className="text-3xl font-bold text-center text-gray-800">AI Resume & Cover Letter Generator</h1>
 
       {/* Personal Info */}
@@ -324,9 +324,9 @@ return (
     {/* Resume Output */}
     {summary && (
       <div className="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-xl shadow space-y-4">
-        <h2 className="text-xl font-bold text-gray-800">Generated Resume:</h2>
+        <h2 className="text-xl font-bold text-gray-800 print:hidden">Generated Resume:</h2>
         <ModernResume data={resume} ref={contentRef} />
-        <div className="flex justify-end">
+        <div className="flex justify-end print:hidden">
           <button onClick={safeHandleDownload} disabled={!canDownload} className="btn-secondary">
             Download Resume
           </button>
@@ -335,7 +335,7 @@ return (
     )}
 
     {/* Generate Cover Letter */}
-    <div className="max-w-4xl mx-auto mt-8 flex justify-center">
+    <div className="max-w-4xl mx-auto mt-8 flex justify-center print:hidden">
       <button onClick={generateLetter} className="btn-primary w-full max-w-md">
         {coverLoading ? 'Loading...' : 'Generate Cover Letter with AI'}
       </button>
@@ -344,9 +344,9 @@ return (
     {/* Cover Letter Output */}
     {resume.coverLetterData?.[0]?.coverLetterContent && (
       <div className="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-xl shadow space-y-4">
-        <h2 className="text-xl font-bold text-gray-800">Generated Cover Letter:</h2>
+        <h2 className="text-xl font-bold text-gray-800 print:hidden">Generated Cover Letter:</h2>
         <CoverLetter data={resume} ref={coverLetterRef} />
-        <div className="flex justify-end">
+        <div className="flex justify-end print:hidden">
           <button onClick={safeCoverHandleDownload} disabled={!coverLetterDownload} className="btn-secondary">
             Download Cover Letter
           </button>
